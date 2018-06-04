@@ -169,7 +169,7 @@ int main(void)
 			break;
 
 		case 7:
-			printf("Introduzca el numero de rectangulos protegidos: \n");
+			printf("Introduzca el numero de rectangulo: \n");
 			gets(message_2);
 			strcat(message_2,";");
 			printf("Introduzca la coordenada X ini:\n");
