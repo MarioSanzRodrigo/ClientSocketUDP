@@ -8,7 +8,7 @@
 #include<sys/socket.h>
 
  
-#define SERVER "138.4.7.249"
+#define SERVER "138.4.7.149"
 //#define SERVER "127.0.0.1"
 #define BUFLEN 512  //Max length of buffer
 #define PORT 8888   //The port on which to send data
@@ -21,9 +21,9 @@ void die(char *s)
  
 int main(void)
 {
-    printf("####################################################\n");
-    printf("##### Interfaz de control GAW - MediaProcessor #####\n");
-    printf("####################################################\n");
+    printf("########################################################\n");
+    printf("##### Interfaz de control GAW - FFMPEG-Control-API #####\n");
+    printf("########################################################\n");
 
     struct sockaddr_in si_other;
     int s, i, slen=sizeof(si_other);
@@ -194,19 +194,19 @@ int main(void)
 			printf("Introduzca un valor para Block Gop:\n");
 			gets(message_2);
 
-			break:
+			break;
 
 		case 9:
 			printf("Introduzca un valor para Down Mode:\n");
 			gets(message_2);
 
-			break:
+			break;
 
 		case 10:
 			printf("Introduzca un valor para Skip Frames:\n");
 			gets(message_2);
 
-			break:
+			break;
 			
 	}
 
