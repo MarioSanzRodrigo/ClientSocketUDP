@@ -8,7 +8,7 @@
 #include<sys/socket.h>
 
  
-#define SERVER "138.4.7.149"
+#define SERVER "138.4.7.249"
 //#define SERVER "127.0.0.1"
 #define BUFLEN 512  //Max length of buffer
 #define PORT 8888   //The port on which to send data
@@ -33,6 +33,9 @@ int main(void)
     char message_1[BUFLEN] = "";
     char message_2[BUFLEN] = "";
     char message_3[BUFLEN] = "";
+    char message_4[BUFLEN] = "";
+    char message_5[BUFLEN] = "";
+    char message_6[BUFLEN] = "";
  
     if ( (s=socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
     {
@@ -52,7 +55,7 @@ int main(void)
     while(1)
     {
 
-        printf("\nElija una opcion : \n 1. Modificar Quality Level (ql) \n 2. Modificar Frame Rate Output \n 3. Modificar Bit Rate Output \n 4. Modificar Gop Size \n 5. Modificar Width y Height Output \n 6. Cambiar codificador-decodificador\n");
+        printf("\nElija una opcion : \n 1. Modificar Quality Level (ql) \n 2. Modificar Frame Rate Output \n 3. Modificar Bit Rate Output \n 4. Modificar Gop Size \n 5. Modificar Width y Height Output \n 6. Cambiar codificador-decodificador\n 7. Proteccion de rectangulos \n 8. Block Gop \n 9. Down Mode \n 10. Skip Frames \n");
 
 	gets(message_1);
 	int aux = atoi(message_1);
@@ -164,6 +167,46 @@ int main(void)
 					break;
 			}
 			break;
+
+		case 7:
+			printf("Introduzca el numero de rectangulos protegidos: \n");
+			gets(message_2);
+			strcat(message_2,";");
+			printf("Introduzca la coordenada X ini:\n");
+			gets(message_3);
+			strcat(message_3,";");
+			strcat(message_2,message_3);
+			printf("Introduzca la coordenada X fin:\n");
+			gets(message_4);
+			strcat(message_4,";");
+			strcat(message_2,message_4);
+			printf("Introduzca la coordenada Y ini:\n");
+			gets(message_5);
+			strcat(message_5,";");
+			strcat(message_2,message_5);
+			printf("Introduzca la coordenada Y fin:\n");
+			gets(message_6);
+			strcat(message_2,message_6);
+
+			break;
+
+		case 8:
+			printf("Introduzca un valor para Block Gop:\n");
+			gets(message_2);
+
+			break:
+
+		case 9:
+			printf("Introduzca un valor para Down Mode:\n");
+			gets(message_2);
+
+			break:
+
+		case 10:
+			printf("Introduzca un valor para Skip Frames:\n");
+			gets(message_2);
+
+			break:
 			
 	}
 
