@@ -8,7 +8,7 @@
 #include<sys/socket.h>
 
  
-#define SERVER "138.4.7.149"
+#define SERVER "138.4.7.249"
 //#define SERVER "127.0.0.1"
 #define BUFLEN 512  //Max length of buffer
 #define PORT 8888   //The port on which to send data
@@ -32,6 +32,8 @@ int main(void)
     char message[BUFLEN] = "";
     char message_1[BUFLEN] = "";
     char message_2[BUFLEN] = "";
+    char message_2_1[BUFLEN] = "";
+    char message_2_2[BUFLEN] = "";
     char message_3[BUFLEN] = "";
     char message_4[BUFLEN] = "";
     char message_5[BUFLEN] = "";
@@ -172,6 +174,14 @@ int main(void)
 			printf("Introduzca el numero de rectangulo: \n");
 			gets(message_2);
 			strcat(message_2,";");
+			printf("Seleccionar Flag Active (1-True / 0-False): \n");
+			gets(message_2_1);
+			strcat(message_2_1,";");
+			strcat(message_2,message_2_1);
+			printf("Seleccionar Flag Protection (1-True / 0-False): \n");
+			gets(message_2_2);
+			strcat(message_2_2,";");
+			strcat(message_2,message_2_2);
 			printf("Introduzca la coordenada X ini:\n");
 			gets(message_3);
 			strcat(message_3,";");
