@@ -8,8 +8,8 @@
 #include<sys/socket.h>
 
  
-#define SERVER "138.4.7.249"
-//#define SERVER "127.0.0.1"
+//#define SERVER "138.4.7.149"
+#define SERVER "127.0.0.1"
 #define BUFLEN 512  //Max length of buffer
 #define PORT 8888   //The port on which to send data
  
@@ -201,21 +201,42 @@ int main(void)
 			break;
 
 		case 8:
-			printf("Introduzca un valor para Block Gop:\n");
+			printf("Introduzca un valor para Block Gop: \n");
 			gets(message_2);
-
+			val = atoi(message_2);
+			if (val>=0 && val<32000){
+			}else{
+				printf("\nValor erroneo, introduzca valor entre 0-32000 \n\n");
+        			memset(message_1,'\0', BUFLEN);
+        			memset(message_2,'\0', BUFLEN);
+				goto nothing;
+			}
 			break;
 
 		case 9:
 			printf("Introduzca un valor para Down Mode:\n");
 			gets(message_2);
-
+			val = atoi(message_2);
+			if (val>=0 && val<3){
+			}else{
+				printf("\nValor erroneo, introduzca valor entre 0-3 \n\n");
+        			memset(message_1,'\0', BUFLEN);
+        			memset(message_2,'\0', BUFLEN);
+				goto nothing;
+			}
 			break;
 
 		case 10:
 			printf("Introduzca un valor para Skip Frames:\n");
 			gets(message_2);
-
+			val = atoi(message_2);
+			if (val>=0 && val<=100){
+			}else{
+				printf("\nValor erroneo, introduzca valor entre 0-100 \n\n");
+        			memset(message_1,'\0', BUFLEN);
+        			memset(message_2,'\0', BUFLEN);
+				goto nothing;
+			}
 			break;
 			
 	}
