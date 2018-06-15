@@ -155,48 +155,72 @@ int main(void)
 				case 1:
 					// ffmpeg_mlhe_enc y ffmpeg_mlhe_dec
 					memset(message_2,'\0', BUFLEN);
-					strncpy(message_2, "1",BUFLEN);
+					strncpy(message_2, "proc_name=ffmpeg_mlhe_enc",BUFLEN);
 					break;
 				case 2:
 					// ffmpeg_m2v_enc y ffmpeg_mlhe_dec
         				memset(message_2,'\0', BUFLEN);
-					strncpy(message_2, "2",BUFLEN);
+					strncpy(message_2, "proc_name=ffmpeg_m2v_enc",BUFLEN);
 					break;
 				case 3:
 					// ffmpeg_x264_enc y ffmpeg_x264_dec
         				memset(message_2,'\0', BUFLEN);
-					strncpy(message_2, "3",BUFLEN);
+					strncpy(message_2, "proc_name=ffmpeg_x264_enc",BUFLEN);
 					break;
 			}
 			break;
 
 		case 7:
-			printf("Introduzca el numero de rectangulo: \n");
+			printf("Introduzca el valor de TTL: \n");
 			gets(message_2);
-			strcat(message_2,";");
-			printf("Seleccionar Flag Active (1-True / 0-False): \n");
-			gets(message_2_1);
-			strcat(message_2_1,";");
-			strcat(message_2,message_2_1);
+			strcat(message_2,",");
 			printf("Seleccionar Flag Protection (1-True / 0-False): \n");
-			gets(message_2_2);
-			strcat(message_2_2,";");
-			strcat(message_2,message_2_2);
+			gets(message_2_1);
+			strcat(message_2_1,",");
+			strcat(message_2,message_2_1);
 			printf("Introduzca la coordenada X ini:\n");
-			gets(message_3);
-			strcat(message_3,";");
-			strcat(message_2,message_3);
+			gets(message_2_2);
+			strcat(message_2_2,",");
+			strcat(message_2,message_2_2);
 			printf("Introduzca la coordenada X fin:\n");
-			gets(message_4);
-			strcat(message_4,";");
-			strcat(message_2,message_4);
+			gets(message_3);
+			strcat(message_3,",");
+			strcat(message_2,message_3);
 			printf("Introduzca la coordenada Y ini:\n");
-			gets(message_5);
-			strcat(message_5,";");
-			strcat(message_2,message_5);
+			gets(message_4);
+			strcat(message_4,",");
+			strcat(message_2,message_4);
 			printf("Introduzca la coordenada Y fin:\n");
+			gets(message_5);
+			strcat(message_2,message_5);
+			printf("¿Quiere agregar otro rectangulo? (1-SI / 0-NO):\n");
 			gets(message_6);
-			strcat(message_2,message_6);
+			int aux3 = atoi(message_6);
+			
+			while (aux3 != 0){
+				printf("Seleccionar Flag Protection (1-True / 0-False): \n");
+				gets(message_2_1);
+				strcat(message_2_1,",");
+				strcat(message_2,message_2_1);
+				printf("Introduzca la coordenada X ini:\n");
+				gets(message_2_2);
+				strcat(message_2_2,",");
+				strcat(message_2,message_2_2);
+				printf("Introduzca la coordenada X fin:\n");
+				gets(message_3);
+				strcat(message_3,",");
+				strcat(message_2,message_3);
+				printf("Introduzca la coordenada Y ini:\n");
+				gets(message_4);
+				strcat(message_4,",");
+				strcat(message_2,message_4);
+				printf("Introduzca la coordenada Y fin:\n");
+				gets(message_5);
+				strcat(message_2,message_5);
+				printf("¿Quiere agregar otro rectangulo? (1-SI / 0-NO):\n");
+				gets(message_6);
+				aux3 = atoi(message_6);
+			}
 
 			break;
 
@@ -243,7 +267,7 @@ int main(void)
 
 
 	strcat(message,message_1);
-	strcat(message,",");
+	strcat(message,"/");
 	strcat(message,message_2);
 
 	printf("\nDatos enviados: %s\n",message);
