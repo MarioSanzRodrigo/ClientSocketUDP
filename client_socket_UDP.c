@@ -196,6 +196,11 @@ int main(void)
 			printf("¿Quiere agregar otro rectangulo? (1-SI / 0-NO):\n");
 			gets(message_6);
 			int aux3 = atoi(message_6);
+
+			if(aux3 == 0){
+			}else{
+				strcat(message_2,",");
+			}
 			
 			while (aux3 != 0){
 				printf("Seleccionar Flag Protection (1-True / 0-False): \n");
@@ -220,6 +225,7 @@ int main(void)
 				printf("¿Quiere agregar otro rectangulo? (1-SI / 0-NO):\n");
 				gets(message_6);
 				aux3 = atoi(message_6);
+					
 			}
 
 			break;
